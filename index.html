@@ -18,8 +18,20 @@
 
         <button v-on:click="getAll">Hent alle bøger</button>
 
+        <ul v-if="books.length > 0">
+            <li v-for="book in books" :key="book.id">
+                
+                    <h2>{{ book.title }}</h2>
+                    <h3>{{ book.author }}</h3>
+                    <p>{{book.description}}</p>
+                
+            </li>
+        </ul>
+
     </div>
-    
+ 
+<!--Import Axios-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
 <!--Import App-->
 <script src="./js/main.js"></script>
 

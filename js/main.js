@@ -4,18 +4,19 @@ const app = Vue.createApp({
             intro:'Hello World',
             books: [],
             newBook:{
-                Title: '',
-                Author: '',
-                Year: null,
-                Description: '',
+                id: null,
+                title: '',
+                author: '',
+                year: null,
+                description: '',
             }
         }
     }, 
     methods: {
         getAll(){
-            axios.get('http://localhost:5090/api/Books')
+            axios.get('http://localhost:5090/api/books')
             .then(response=>{
-                document.getElementById("content")
+                
                 this.books=response.data;
             })
             .catch(
